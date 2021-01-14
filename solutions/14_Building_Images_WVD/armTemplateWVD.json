@@ -67,7 +67,7 @@
             [
                 {   
                     "type": "SharedImage",
-                    "galleryImageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Network/virtualNetworks/VNET105_WVD/subnets/SNET_WVDIT",
+                    "galleryImageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/images/<imageName>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
                         "source": "wvd10",
