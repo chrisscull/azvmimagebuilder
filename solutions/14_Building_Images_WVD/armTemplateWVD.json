@@ -44,7 +44,7 @@
                     "vmSize": "Standard_D2_v2",
                     "osDiskSizeGB": 127,
                     "vnetConfig": {
-                        "subnetId": "/subscriptions/<subscriptionID>/resourceGroups/<vnetRgName>/providers/Microsoft.Network/virtualNetworks/VNET105_WVD/subnets/SNET_WVDIT"
+                        "subnetId": "/subscriptions/<subscriptionID>/resourceGroups/<vnetRgName>/providers/Microsoft.Network/virtualNetworks//subscriptions/db46e4ca-1b02-44be-8f4b-8f9d73ed157d/resourceGroups/RG_WVD/providers/Microsoft.Network/virtualNetworks/VNET105_WVD/subnets/SNET_WVDIT"
                         }
                     },
         
