@@ -55,67 +55,6 @@
             },
             "customize": [
 
-        
-                    {
-                        "type": "PowerShell",
-                        "name": "downloadWvdOptimizer",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "inline": [
-                            "write-host 'Downloading Download WVD Optimizer starting'",
-                            "New-Item -Path C:\\ -Name Optimize -ItemType Directory -ErrorAction SilentlyContinue",
-                            "$LocalPath = 'C:\\Optimize'",
-                            "$WVDOptimizeURL = 'https://github.com/The-Virtual-Desktop-Team/Virtual-Desktop-Optimization-Tool/archive/master.zip'",
-                            "$WVDOptimizeInstaller = 'Windows_10_VDI_Optimize-master.zip'",
-                            "Invoke-WebRequest -Uri $WVDOptimizeURL -OutFile '$Localpath$WVDOptimizeInstaller'",
-                            "write-host 'Downloading Download WVD Optimizer finished'"
-                                ]
-                    },
-
-                    {
-                        "type": "PowerShell",
-                        "name": "prepForWVDOptimize",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "inline": [
-                            "write-host 'Prep for WVD Optimize starting'",
-                            "Expand-Archive -LiteralPath 'C:\\Optimize\\Windows_10_VDI_Optimize-master.zip' -DestinationPath '$Localpath' -Force -Verbose",
-                            "Set-Location -Path C:\\Optimize\\Virtual-Desktop-Optimization-Tool-master",
-                            "write-host 'Prep for WVD Optimize finished'"
-                                ]
-                    },
-
-                    {
-                        "type": "PowerShell",
-                        "name": "runWVDOptimizeScript",
-                        "runElevated": true,
-                        "runAsSystem": true,
-                        "inline": [
-                            "write-host 'Run WVD Optimize Script starting'",
-                            "New-Item -Path C:\\Optimize\\ -Name install.log -ItemType File -Force",
-                            "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force -Verbose",
-                            "add-content c:\\Optimize\\install.log 'Starting Optimizations'",
-                            ".\\Win10_VirtualDesktop_Optimize.ps1 -WindowsVersion 2004 -Verbose",
-                            "write-host 'Run WVD Optimize Script finished'"
-                                ]
-                    },
-
-                    {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "add-content c:\\Optimize\\install.log 'restarting post Optimizations'",
-                        "restartTimeout": "5m"
-                    },
-                        
-                    {
-                        "type": "WindowsUpdate",
-                        "searchCriteria": "IsInstalled=0",
-                        "filters": [
-                            "exclude:$_.Title -like '*Preview*'",
-                            "include:$true"
-                                    ],
-                        "updateLimit": 40
-                    }
-
             ],
             "distribute": 
             [
