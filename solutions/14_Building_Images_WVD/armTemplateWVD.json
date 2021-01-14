@@ -42,7 +42,10 @@
             "vmProfile": 
                     {
                     "vmSize": "Standard_D2_v2",
-                    "osDiskSizeGB": 127
+                    "osDiskSizeGB": 127,
+                    "vnetConfig": {
+                        "subnetId": "/subscriptions/<subscriptionID>/resourceGroups/<vnetRgName>/providers/Microsoft.Network/virtualNetworks/VNET105_WVD/subnets/SNET_WVDIT"
+                        }
                     },
         
             "source": {
